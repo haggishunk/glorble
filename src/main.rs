@@ -1,12 +1,7 @@
 use std::env;
 
 fn main() -> std::io::Result<()> {
-    getcwd();
+    let path = env::current_dir()?;
+    println!("You are at {}", path.display());
     Ok(())
-}
-
-// print the cwd
-fn getcwd() {
-    let d = env::current_dir().unwrap();
-    println!("You are at {}", d.display());
 }
